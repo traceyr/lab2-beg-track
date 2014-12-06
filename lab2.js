@@ -1,5 +1,5 @@
 /*********************************************************
-LAB 3: 
+LAB 3:
 
 Welcome to Lab 2 =)
 
@@ -15,11 +15,11 @@ To run this file (in the terminal) use: node lab2.js
 // SETUP
 //*********************************************************
 
-// We're going to use this special assert method again to 
+// We're going to use this special assert method again to
 // test our code
 function assert(expression, failureMessage) {
   if (!expression) {
-    console.log('assertion failure: ', failureMessage);
+    console.log("assertion failure: ", failureMessage);
   }
 }
 
@@ -28,7 +28,7 @@ function assert(expression, failureMessage) {
 //
 // Each of the following three functions (x, y, and z) has
 // an empty body. Look at the asserts for each function to
-// figure out what function is supposed to do. Rename each 
+// figure out what function is supposed to do. Rename each
 // function to reflect its purpose, implement them,
 // then, add two more passing asserts for each one.
 //*********************************************************
@@ -51,9 +51,9 @@ function y() {
 }
 
 // TODO: don't forget to rename the function down here, too
-assert(y(1, 2, 3) === 1, "y(1, 2, 3)"); 
+assert(y(1, 2, 3) === 1, "y(1, 2, 3)");
 assert(y(4, 5, 3) === 3, "y(4, 5, 3)");
-assert(y(-5, -10, 1) === -10, "y(-5, -10, 1)"); 
+assert(y(-5, -10, 1) === -10, "y(-5, -10, 1)");
 
 function z() {
   //TODO: implement this function so that all the asserts
@@ -77,43 +77,43 @@ assert(z(5) === 125, "z(5)");
 
 // Take two arrays. Return true if they have all the same
 // items. Ordering doesn't matter. Otherwise, return false.
-function sameItems(array1, array2){
+function sameItems(array1, array2) {
   array1.sort();
   array2.sort();
-  while(array1.pop() === array2.pop()){
-    if(!array1.length){
+  while (array1.pop() === array2.pop()) {
+    if (!array1.length) {
       return true;
     }
   }
   return false;
 }
 
-assert(sameItems([],[]), "sameItems([],[])");
-assert(sameItems([1,2,3],[2,3,1]), "sameItems([1,2,3],[2,3,1])");
-assert(!sameItems([],[1]), "sameItems([],[1])");
+assert(sameItems([], []), "sameItems([],[])");
+assert(sameItems([ 1, 2, 3 ], [ 2, 3, 1 ]), "sameItems([1,2,3],[2,3,1])");
+assert(!sameItems([], [ 1 ]), "sameItems([],[1])");
 
 // Take an array of string and a search string. Return an array
 // that has only the strings in array that included the search
 // string
-function filter(array, searchString){
+function filter(array, searchString) {
   var startLength = array.length,
     currentString;
-  for(var i=0; i<startLength; i++){
+  for (var i = 0; i < startLength; i++) {
     currentString = array.pop();
-    if(currentString.indexOf(searchString) !== -1){
+    if (currentString.indexOf(searchString) !== -1) {
       array.unshift(currentString);
     }
   }
   return array;
 }
 
-var catWords = ["catnip", "kitty yawns", "kitten pile"];
-var kittenWords = ["kitty yawns", "kitten pile"];
+var catWords = [ "catnip", "kitty yawns", "kitten pile" ];
+var kittenWords = [ "kitty yawns", "kitten pile" ];
 assert(sameItems(kittenWords, filter(catWords, "kitt")), "filter");
 
 //*********************************************************
 // PROBLEM 3: Moar Loops. 20 points.
-// 
+//
 // Implement the following functions. Write at least 3
 // assertions for each one
 //*********************************************************
@@ -122,22 +122,21 @@ function max(array) {
 }
 
 // TODO: write three more assertions
-assert(max([1,3,2]) === 3, "[1,3,2]");
+assert(max([ 1, 3, 2 ]) === 3, "[1,3,2]");
 
 function variablify(string) {
   // TODO: you are given a string with several words in it
   // return a corresponding variable name that follows
   // javascript conventions
-  // HINT: 
-  // you might want to use these string methods: 
+  // HINT:
+  // you might want to use these string methods:
   //  split(), charAt(), toUpperCase()
   // and this array method: join()
 }
 
 // TODO: write three more assertions
-assert(variablify("one two three") === "oneTwoThree", 
+assert(variablify("one two three") === "oneTwoThree",
   "variablify(\"one two three\")");
-
 
 //*********************************************************
 // PROBLEM 4: Cleanup: 10 points
